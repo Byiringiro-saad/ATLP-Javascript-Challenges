@@ -9,12 +9,19 @@ const isPrime = (n) => {
         return false;
       }
     }
-    return true;
   }
+  return true;
 };
 
 const primeNumbers = (arr) => {
-  const filtered = arr.filter((el) => !isPrime(el));
+  let filtered = new Array();
+
+  arr.forEach((el) => {
+    if (isPrime(el)) {
+      filtered.push(el);
+    }
+  });
+
   return filtered;
 };
 
